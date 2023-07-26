@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
 	createBrowserRouter,
 	NavLink,
@@ -16,7 +14,11 @@ import About from "./views/About";
 // import Test from "./Test";
 import Home from "./views/Home";
 import Cuisines from "./views/Cuisines";
+import Login from "./views/Login";
+import MyRecipes from "./views/MyRecipes";
+
 import NoMatch from "./views/NoMatch";
+import { AuthContextProvider } from "./context/AuthContext";
 
 //NOTE - everything must be within the function anchor
 
@@ -27,14 +29,21 @@ function App() {
 				<Route index element={<Home />} />
 				<Route path="About" element={<About />} />
 				<Route path="Cuisines" element={<Cuisines />} />
+				<Route path="MyRecipes" element={<MyRecipes />} />
+				<Route path="Login" element={<Login />} />
 			</Route>
 		)
 	);
 
 	return (
 		<>
-			<h1>Recipes Website</h1>
-			<RouterProvider router={router} />
+			<AuthContextProvider>
+				<h1>Recipes Website</h1>
+				<RouterProvider router={router} />
+			</AuthContextProvider>
+
+			{/* <h1>Recipes Website</h1>
+			<RouterProvider router={router} /> */}
 		</>
 	);
 }
@@ -44,8 +53,10 @@ const Root = () => {
 		<>
 			<nav>
 				<NavLink to="/">Home</NavLink> |
-				<NavLink to="/Cuisines">Cuisines</NavLink> |
-				<NavLink to="/About">About</NavLink> |
+				<NavLink to="/Cuisines"> Cuisines</NavLink> |
+				<NavLink to="/About"> About</NavLink> |
+				<NavLink to="/MyRecipes"> My Recipes</NavLink> |
+				<NavLink to="/MyRecipes"> Login</NavLink>
 			</nav>
 
 			<div>
