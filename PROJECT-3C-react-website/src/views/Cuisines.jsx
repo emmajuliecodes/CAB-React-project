@@ -2,13 +2,28 @@
 import React, { useEffect, useState } from "react";
 
 const Cuisines = () => {
-	// const [cuisines, setCuisines] = useState([]);
+	const [cuisineSearch, setCuisineSearch] = useState();
 
-	// const fetchCuisines = async () => {
-	// 	try {
-	// 		const response = await fetch ()
-	// 	}
-	// }
+	const fetchComplexRecipe = async () => {
+		try {
+			const response = await fetch(
+				`https://api.spoonacular.com/recipes/complexSearch?cuisine=italian&number=10&apiKey=${
+					import.meta.env.VITE_API_KEY
+				}`
+			);
+			const result = await response.json();
+
+			console.log("recipes by ingredients :>> ", result);
+			setCuisineSearch(result);
+		} catch (error) {
+			console.log("error :>> ", error);
+		}
+	};
+
+	console.log("cuisinesearch", cuisineSearch);
+	useEffect(() => {
+		fetchComplexRecipe();
+	}, []);
 
 	return (
 		<div>

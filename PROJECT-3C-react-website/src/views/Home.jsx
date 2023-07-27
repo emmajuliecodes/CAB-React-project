@@ -1,6 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
+
+
 // import { data } from "../const";
 
 const Home = () => {
@@ -37,20 +39,21 @@ const Home = () => {
 					type="text"
 					id="search"
 					name="search"
-					onkeyup="searchBar()"
+					// onkeyup="searchBar()"
 					placeholder="Enter your ingredients..."></input>
 			</form>
 
 			{recipes &&
 				recipes.map((recipe, i) => {
 					// return <p key={i}>{recipe.title}</p>;
-					return <Card key={i} recipe={recipe.title} />;
+					return <Card key={i} recipe={recipe} />;
 				})}
-			{recipes &&
+			{/* {recipes &&
 				recipes.map((recipe, i) => {
 					return <Card key={i} recipe={recipe.images} />;
-				})}
+				})} */}
 		</>
 	);
 };
+
 export default Home;

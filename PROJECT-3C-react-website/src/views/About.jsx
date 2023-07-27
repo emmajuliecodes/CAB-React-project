@@ -1,12 +1,41 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import { React, useEffect, useState } from "react";
 
-const About = () => {
+function About() {
+	const [randomRecipes, setRandomRecipes] = useState();
+
+	const fetchRandomRecipes = async () => {
+		try {
+			const response = await fetch(
+				`https://api.spoonacular.com/recipes/random?apiKey=${
+					import.meta.env.VITE_API_KEY
+				}`
+			);
+
+			const result = await response.json();
+
+			console.log("recipes by ingredients :>> ", result);
+			setRandomRecipes(result);
+		} catch (error) {
+			console.log("error :>> ", error);
+		}
+	};
+
+	console.log("random recipes", randomRecipes);
+	useEffect(() => {
+		fetchRandomRecipes();
+	}, []);
+
 	return (
-		<div>
+		<>
 			<h1>About!</h1>
-		</div>
+
+			{randomRecipes &&
+				randomRecipes.map((recipe, i) => {
+					return <RandomRecipes key={i} recipe={recipe} />;
+				})}
+		</>
 	);
-};
+}
 
 export default About;
