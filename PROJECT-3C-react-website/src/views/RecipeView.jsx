@@ -1,8 +1,11 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import RandomRecipes from "../components/RandomRecipes";
 
-function About() {
+import FullRecipe from "../components/FullRecipe";
+
+//TODO - REPLACE BELOW WITH CODE TO FETCH SPECIFIC RECIPE BASED ON ID
+
+function RecipeView() {
 	const [randomRecipes, setRandomRecipes] = useState([]);
 
 	const fetchRandomRecipes = async () => {
@@ -28,14 +31,12 @@ function About() {
 
 	return (
 		<>
-			<h1>About!</h1>
-
 			{randomRecipes &&
 				randomRecipes.map((recipe, i) => {
-					return <RandomRecipes key={i} recipe={recipe} />;
+					return <FullRecipe key={i} recipe={recipe} />;
 				})}
 		</>
 	);
 }
 
-export default About;
+export default RecipeView;

@@ -16,6 +16,7 @@ import Home from "./views/Home";
 import Cuisines from "./views/Cuisines";
 import Login from "./views/Login";
 import MyRecipes from "./views/MyRecipes";
+import RecipeView from "./views/RecipeView";
 
 import NoMatch from "./views/NoMatch";
 import { AuthContextProvider } from "./context/AuthContext";
@@ -31,6 +32,7 @@ function App() {
 				<Route path="Cuisines" element={<Cuisines />} />
 				<Route path="MyRecipes" element={<MyRecipes />} />
 				<Route path="Login" element={<Login />} />
+				<Route path="RecipeView" element={<RecipeView />} />
 			</Route>
 		)
 	);
@@ -103,11 +105,6 @@ const Root = () => {
 // 			<p>Explore and find recipes based on cuisines and ingredients</p>
 // 		</div>
 // TODO - Display 10 x random recipes props here
-// 		{recipes &&
-// 			recipes.map((recipe) => {
-// 				return <p key={recipe.id}>{recipe.title}</p>;
-// 			})}
-// 	</>
-// );
+// 		
 
 export default App;

@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 
-
 // import { data } from "../const";
 
 const Home = () => {
@@ -39,7 +38,6 @@ const Home = () => {
 					type="text"
 					id="search"
 					name="search"
-					// onkeyup="searchBar()"
 					placeholder="Enter your ingredients..."></input>
 			</form>
 
@@ -48,10 +46,6 @@ const Home = () => {
 					// return <p key={i}>{recipe.title}</p>;
 					return <Card key={i} recipe={recipe} />;
 				})}
-			{/* {recipes &&
-				recipes.map((recipe, i) => {
-					return <Card key={i} recipe={recipe.images} />;
-				})} */}
 		</>
 	);
 };

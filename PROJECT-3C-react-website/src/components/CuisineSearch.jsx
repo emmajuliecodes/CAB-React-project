@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-function RandomRecipes({ recipe }) {
-	console.log("props in random card", recipe);
+function CuisineSearch({ recipe }) {
+	console.log("cuisine recipe", recipe);
 	return (
 		<div>
 			<h3>{recipe.title}</h3>
@@ -9,4 +9,4 @@ function RandomRecipes({ recipe }) {
 	);
 }
 
-export default RandomRecipes;
+export default CuisineSearch;
