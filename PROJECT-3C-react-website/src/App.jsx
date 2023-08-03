@@ -58,7 +58,7 @@ const Root = () => {
 				<NavLink to="/Cuisines"> Cuisines</NavLink> |
 				<NavLink to="/About"> About</NavLink> |
 				<NavLink to="/MyRecipes"> My Recipes</NavLink> |
-				<NavLink to="/MyRecipes"> Login</NavLink>
+				<NavLink to="/Login"> Login</NavLink>
 			</nav>
 
 			<div>
@@ -105,6 +105,6 @@ const Root = () => {
 // 			<p>Explore and find recipes based on cuisines and ingredients</p>
 // 		</div>
 // TODO - Display 10 x random recipes props here
-// 		
+//
 
 export default App;

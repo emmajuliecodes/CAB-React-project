@@ -38,7 +38,7 @@ const Cuisines = () => {
 
 			console.log("cuisine list :>> ", result);
 
-			setCuisineList(result.recipes.{"cuisine"});
+			setCuisineList(result.recipes.cuisine);
 			console.log("cuisinelist", cuisineList);
 		} catch (error) {
 			console.log("error :>> ", error);

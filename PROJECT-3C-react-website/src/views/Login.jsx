@@ -1,7 +1,10 @@
+import LoginComponent from "../components/LoginComponent";
+
 const Login = () => {
 	return (
 		<div>
-			<h1>Login page</h1>
+			<p>Login or register a new account to view your saved recipes.</p>
+			<LoginComponent />
 		</div>
 	);
 };
